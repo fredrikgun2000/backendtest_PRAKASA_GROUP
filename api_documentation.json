@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "5d8f94db-7159-4995-aea0-896c3f952579",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4617285"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin123@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin123@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://backendtest.teammatech.com/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"backendtest",
+								"teammatech",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "fredrikgun2000@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "Cust111@",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmZmOGFkNTAyMTc3MWU3ODQ1MDcwMWM5NWQ4ZjQ3MDExNThiOGExNzJkMmZjZjQzYThmNTYwMDUzYjg4MTViZjVmZmQzYzBiMDBmODQ0N2IiLCJpYXQiOjE2OTA2NjA2ODkuODc4MDc5LCJuYmYiOjE2OTA2NjA2ODkuODc4MDg1LCJleHAiOjE3MjIyODMwODkuODcwNzcxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jiZeXpQmjr1uGvcQfxwew43U1L3jkg0p_WSSp3YwEYzXBjZBxOnl4hgOrAEZ1eBTLlTRoiI8ITUJYQ5PchI6huwMzYj3hLe4YwdRbXTiNX5NePk7FKmrlhAN4GCc5tF6svjMUS3w-QJVBisGvc0M-hnLZDWWNMajZCIPchNZKAyYQXi2NZah-CkuhCzPfBeqCqggGuFFKf1ud--dDnsJOZj94cRhwctRnOVYKRjI3pCwtX17U6SWyduFhsaPdBCz6Egb5_9A2MwtD9WcFLisOycRJSty3DMkiuZRwvHYlht58f4UHf85rjWVZLlgyVD_06W0XLGpxzwqcrI3yDa5D_yZtVoIxnDBqggJ9be1dM9w0BeA-Aaudd9gvjHxKg1dZdXGDtUHnOKAtRpqdzElCZN4hEg6NJEQghyBcSurI3gOqUv9Ko8egRHrfPu5Ooj2UvYhl68ZGnir99ch74BAIerBOkeMC9o45z2hoUul4Rw34LUzGh39b_pBk1Q8OvLhjl3EMamcRRDgZsCXXFO8e3z4XQBiCASQYhYBIo6GJtd1FRdJmdfZgZeY59I92y31fRnItE19hD4E3qB2l70Z8W2F9YjPxaKBWDuXNUGQtp-_VM9tJM7mqwdUVq8bnactWIbgBFi3PTYsBrtPuoNBoeSMFQP5J26i-RqTWwPxNIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://backendtest.teammatech.com/api/v1/auth/logout",
+							"protocol": "https",
+							"host": [
+								"backendtest",
+								"teammatech",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmIwZmEyMDg2ZTliMjA2Y2NiNzNkOTQ3Mzg2OWRhMDUwODNlYjI0MmU0NjI3MzZjNjExNzhhNTMzZTZiZThiMzI3OTYyY2NhOTliZjM5MDkiLCJpYXQiOjE2OTA3MzgwMDEuNzEyNjc3LCJuYmYiOjE2OTA3MzgwMDEuNzEyNjc5LCJleHAiOjE3MjIzNjA0MDEuNzA5MjIzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.OKbIFI291We1z7gE6vbTQjVxSe3PfxQEkSGL4F2qhI1B3T6MAPyB_BYHba0Fy--b-3SUYVwrp5vsfevKrSibProR4dxXoDhYLHqglRdJ7X-LsTzQz0saFwR0gUSAlEzDcjw2-kepVF_Etmhc3LRmx4YYn8TBaiX1chKM5ebDDloXIBaczi4VHdpIN5G9CGtjq5PEbvRa2FxOruVds75V2j-CFtHGToltjvEioZVDyz96UiZNlvPk5gCVso9fZp30vxuhn6mVyhm4qEqAf9mGhL8yD8qLzysGMtaOo65cBnsQmchImm0cF5j5xHKThW1mEGV2rYpuTeOMJpK-9LU7siRUwlOyarImKunUa2cPkfvRBhkrcAb1I0T3U8XmIBhfvmuN5qEPycmn4QT54jPDLy_mW3CPJ15L8TqgVKHRw90n3u8NkHieQi739096_qErLpYjGQbmJedbagEaiTkBkkze7eujOHd-JtPxMbOK1GDheYz1pae_YPfG6R_8ERHSO8toAydKoS1WoAcZjgzg3s0sdhBWOUjJxcKvNGHvaotK1W7uRkeWeTC-tw2ZlyeTsSRSUoq4MF-GjbQs9_Nw8wbEKH6RKgrxhWOLFsC_iMHr5psmJjkgHIa38tqRoI9hBccYlM3m28CV8znLAVF5jjHjjkUzJe1tRWqFXUn0fNw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://backendtest.teammatech.com/api/v1/auth/refresh",
+							"protocol": "https",
+							"host": [
+								"backendtest",
+								"teammatech",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmIwZmEyMDg2ZTliMjA2Y2NiNzNkOTQ3Mzg2OWRhMDUwODNlYjI0MmU0NjI3MzZjNjExNzhhNTMzZTZiZThiMzI3OTYyY2NhOTliZjM5MDkiLCJpYXQiOjE2OTA3MzgwMDEuNzEyNjc3LCJuYmYiOjE2OTA3MzgwMDEuNzEyNjc5LCJleHAiOjE3MjIzNjA0MDEuNzA5MjIzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.OKbIFI291We1z7gE6vbTQjVxSe3PfxQEkSGL4F2qhI1B3T6MAPyB_BYHba0Fy--b-3SUYVwrp5vsfevKrSibProR4dxXoDhYLHqglRdJ7X-LsTzQz0saFwR0gUSAlEzDcjw2-kepVF_Etmhc3LRmx4YYn8TBaiX1chKM5ebDDloXIBaczi4VHdpIN5G9CGtjq5PEbvRa2FxOruVds75V2j-CFtHGToltjvEioZVDyz96UiZNlvPk5gCVso9fZp30vxuhn6mVyhm4qEqAf9mGhL8yD8qLzysGMtaOo65cBnsQmchImm0cF5j5xHKThW1mEGV2rYpuTeOMJpK-9LU7siRUwlOyarImKunUa2cPkfvRBhkrcAb1I0T3U8XmIBhfvmuN5qEPycmn4QT54jPDLy_mW3CPJ15L8TqgVKHRw90n3u8NkHieQi739096_qErLpYjGQbmJedbagEaiTkBkkze7eujOHd-JtPxMbOK1GDheYz1pae_YPfG6R_8ERHSO8toAydKoS1WoAcZjgzg3s0sdhBWOUjJxcKvNGHvaotK1W7uRkeWeTC-tw2ZlyeTsSRSUoq4MF-GjbQs9_Nw8wbEKH6RKgrxhWOLFsC_iMHr5psmJjkgHIa38tqRoI9hBccYlM3m28CV8znLAVF5jjHjjkUzJe1tRWqFXUn0fNw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backendtest.teammatech.com/api/v1/auth/me",
+							"protocol": "https",
+							"host": [
+								"backendtest",
+								"teammatech",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjAyYTQzMTUzMTdhMWY3NTg0ODMwMTZjMDU4YzAxZDkxY2Y2M2RhYTc3MmZhZmQxMmU2YTU2NDExYjQzYjE5NWU0ODMwMDNkMjkyNjNkNDciLCJpYXQiOjE2OTA3MzgwMzEuODM2MjExLCJuYmYiOjE2OTA3MzgwMzEuODM2MjE0LCJleHAiOjE3MjIzNjA0MzEuODM0Mzk0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uT_kSReVNDo1SSj5hfYjAbUIugEVOyGK_J2FVA_4zSNE2EKXwzcqDu2Agd7OCkGp7osfN0SBhUr9OrMf56kf4WB5MhfF7f20QafbAQAhjFlb5e5dOXqksptILcXbfKhPBopjACWxNdPI-e2UfDfpurDDrE6fQ0mbMvdcHazfB8U6riv7NEIg-iS6twcw8egU_FjHiB_iod9yp8fgYok5oWkV84iUqaCj8Tz7ppJR-bJOxOhNaQ70PDzIO5f1mwieLVnhqyI4kjmR-5U7eYN9esrFKeukDAOMFObQl6CsS-rMexzJF2V_4ezHNKgD9Ofsrv-QJ1ezdFZTLpDmdtXXzA_41l8LIAvqtOCbZJF7awkm5ruuRzT9gkN8rDV-temM2ADhZ7d0GseM1GT3BJFHcnnttzzvtwe1sJ11Hc-leIEkSByyKAUgY8rQk5K6kz6OIBZ2T1S66ldvdDShYETn64060OS02fOa96Emtlhs5P-kfKMEMPYWO17bostVrprUsE0zu6A8kFqgeJSNBqv73ooDJMyd0MnH4_ItmAudCu78l7S8ynHQ2UAPzByuozJ0g-7wUR78KB_wbLkORUWUr-JLoopH6QAc21PXVmCdryWk3P-Eex3VEA8F5tgdX79jA8Uies5Dyt_nI7eVS5hkkOtKKhxPRjZC0YJrIFtcgyo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "Fredrik",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Gunawan",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "cust@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Cust111@",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Cust111@",
+											"type": "text"
+										},
+										{
+											"key": "admin_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://backendtest.teammatech.com/api/v1/admin/create",
+									"protocol": "https",
+									"host": [
+										"backendtest",
+										"teammatech",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjAyYTQzMTUzMTdhMWY3NTg0ODMwMTZjMDU4YzAxZDkxY2Y2M2RhYTc3MmZhZmQxMmU2YTU2NDExYjQzYjE5NWU0ODMwMDNkMjkyNjNkNDciLCJpYXQiOjE2OTA3MzgwMzEuODM2MjExLCJuYmYiOjE2OTA3MzgwMzEuODM2MjE0LCJleHAiOjE3MjIzNjA0MzEuODM0Mzk0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uT_kSReVNDo1SSj5hfYjAbUIugEVOyGK_J2FVA_4zSNE2EKXwzcqDu2Agd7OCkGp7osfN0SBhUr9OrMf56kf4WB5MhfF7f20QafbAQAhjFlb5e5dOXqksptILcXbfKhPBopjACWxNdPI-e2UfDfpurDDrE6fQ0mbMvdcHazfB8U6riv7NEIg-iS6twcw8egU_FjHiB_iod9yp8fgYok5oWkV84iUqaCj8Tz7ppJR-bJOxOhNaQ70PDzIO5f1mwieLVnhqyI4kjmR-5U7eYN9esrFKeukDAOMFObQl6CsS-rMexzJF2V_4ezHNKgD9Ofsrv-QJ1ezdFZTLpDmdtXXzA_41l8LIAvqtOCbZJF7awkm5ruuRzT9gkN8rDV-temM2ADhZ7d0GseM1GT3BJFHcnnttzzvtwe1sJ11Hc-leIEkSByyKAUgY8rQk5K6kz6OIBZ2T1S66ldvdDShYETn64060OS02fOa96Emtlhs5P-kfKMEMPYWO17bostVrprUsE0zu6A8kFqgeJSNBqv73ooDJMyd0MnH4_ItmAudCu78l7S8ynHQ2UAPzByuozJ0g-7wUR78KB_wbLkORUWUr-JLoopH6QAc21PXVmCdryWk3P-Eex3VEA8F5tgdX79jA8Uies5Dyt_nI7eVS5hkkOtKKhxPRjZC0YJrIFtcgyo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "customer_id",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://backendtest.teammatech.com/api/v1/admin/read",
+									"protocol": "https",
+									"host": [
+										"backendtest",
+										"teammatech",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"read"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjAyYTQzMTUzMTdhMWY3NTg0ODMwMTZjMDU4YzAxZDkxY2Y2M2RhYTc3MmZhZmQxMmU2YTU2NDExYjQzYjE5NWU0ODMwMDNkMjkyNjNkNDciLCJpYXQiOjE2OTA3MzgwMzEuODM2MjExLCJuYmYiOjE2OTA3MzgwMzEuODM2MjE0LCJleHAiOjE3MjIzNjA0MzEuODM0Mzk0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uT_kSReVNDo1SSj5hfYjAbUIugEVOyGK_J2FVA_4zSNE2EKXwzcqDu2Agd7OCkGp7osfN0SBhUr9OrMf56kf4WB5MhfF7f20QafbAQAhjFlb5e5dOXqksptILcXbfKhPBopjACWxNdPI-e2UfDfpurDDrE6fQ0mbMvdcHazfB8U6riv7NEIg-iS6twcw8egU_FjHiB_iod9yp8fgYok5oWkV84iUqaCj8Tz7ppJR-bJOxOhNaQ70PDzIO5f1mwieLVnhqyI4kjmR-5U7eYN9esrFKeukDAOMFObQl6CsS-rMexzJF2V_4ezHNKgD9Ofsrv-QJ1ezdFZTLpDmdtXXzA_41l8LIAvqtOCbZJF7awkm5ruuRzT9gkN8rDV-temM2ADhZ7d0GseM1GT3BJFHcnnttzzvtwe1sJ11Hc-leIEkSByyKAUgY8rQk5K6kz6OIBZ2T1S66ldvdDShYETn64060OS02fOa96Emtlhs5P-kfKMEMPYWO17bostVrprUsE0zu6A8kFqgeJSNBqv73ooDJMyd0MnH4_ItmAudCu78l7S8ynHQ2UAPzByuozJ0g-7wUR78KB_wbLkORUWUr-JLoopH6QAc21PXVmCdryWk3P-Eex3VEA8F5tgdX79jA8Uies5Dyt_nI7eVS5hkkOtKKhxPRjZC0YJrIFtcgyo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "admin_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "fredrik",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "gunawan",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "fred@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Custt123@",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Custt123@",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://backendtest.teammatech.com/api/v1/admin/update",
+									"protocol": "https",
+									"host": [
+										"backendtest",
+										"teammatech",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"update"
+									],
+									"query": [
+										{
+											"key": "customer_id",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "first_name",
+											"value": "fred",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "a",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "a@gmail.com",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "Aaaaa123@",
+											"disabled": true
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Aaaaa123@",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzNiNDQ4YTcwM2Y2NTJjODg1MGVkODRlY2M5NGEyNDY0OGFhMDJjMzBlZmZlYWE4ODkzNDRiNWYzYjUyMDFiMGZjOWQzNDRiMGE5YWExNTIiLCJpYXQiOjE2OTA3MzczNzIuNDQxNzYsIm5iZiI6MTY5MDczNzM3Mi40NDE3NjIsImV4cCI6MTcyMjM1OTc3Mi40NDAxNTksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.E_NE7H_Z29vofymAlrg1pY9KQxA2IKsFqc1JU0RLEjY6aFXclN-Z4gX9ZCChMHxlClwy-Qk80n5niTtdcjM1GoPovgoNDbLtepISimP_GPDnKFzOkw0smTgIxFFovYF5DP0ePs4s6uTRdK5pYV-mihSuOkT7kcgcxPvikicJJbecp0YoUcYrC_HHBufI4HFx_zmEF_P6N66KAhWpBsIf3IZR3m4gyCUY3W9Z-Dhy2xkxSCrQ8AVlQbp6F3ihYgWn-EELQj2ILex52oDUMycCt1RjOp2nfvghg_MAXl-huhMF9M4OJsf9H1pblKhOwQrxh4oWM_4evkAM-M5ykgEEmqe10hffumGlBZf9W_nLXnuxilJkY9aXQZ7JsnKaVW6sBm4rPuV3rTlPlSt8yOAK6Me0ObEXlQhLPZYH3OUtp36CDY9vvmfH1HgEgy3_kOn-KiEvjnhGU6kafIPKoNgaub_G46iqO9J_x_mHi_gQLXMdG4J5kZmWrytXUs5n1D1Dqla731Ifs5Wp3wHPGpmUYTGKqtATUJrNojTQm25RAMahrWTzvZG6vJ9V-R-dFxn-6NhYkQT2QiVHD3VufuHlacFx8Chp12Mzcm83UIc2OIhI_g6TAmcff_zQ7IUh8kxCcrfLsHX1pWJOHuMm9rSAMDeOKEjXSA1JeHP2fs_ewCU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://backendtest.teammatech.com/api/v1/admin/delete?admin_id=2",
+									"protocol": "https",
+									"host": [
+										"backendtest",
+										"teammatech",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "admin_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Food",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjAyYTQzMTUzMTdhMWY3NTg0ODMwMTZjMDU4YzAxZDkxY2Y2M2RhYTc3MmZhZmQxMmU2YTU2NDExYjQzYjE5NWU0ODMwMDNkMjkyNjNkNDciLCJpYXQiOjE2OTA3MzgwMzEuODM2MjExLCJuYmYiOjE2OTA3MzgwMzEuODM2MjE0LCJleHAiOjE3MjIzNjA0MzEuODM0Mzk0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uT_kSReVNDo1SSj5hfYjAbUIugEVOyGK_J2FVA_4zSNE2EKXwzcqDu2Agd7OCkGp7osfN0SBhUr9OrMf56kf4WB5MhfF7f20QafbAQAhjFlb5e5dOXqksptILcXbfKhPBopjACWxNdPI-e2UfDfpurDDrE6fQ0mbMvdcHazfB8U6riv7NEIg-iS6twcw8egU_FjHiB_iod9yp8fgYok5oWkV84iUqaCj8Tz7ppJR-bJOxOhNaQ70PDzIO5f1mwieLVnhqyI4kjmR-5U7eYN9esrFKeukDAOMFObQl6CsS-rMexzJF2V_4ezHNKgD9Ofsrv-QJ1ezdFZTLpDmdtXXzA_41l8LIAvqtOCbZJF7awkm5ruuRzT9gkN8rDV-temM2ADhZ7d0GseM1GT3BJFHcnnttzzvtwe1sJ11Hc-leIEkSByyKAUgY8rQk5K6kz6OIBZ2T1S66ldvdDShYETn64060OS02fOa96Emtlhs5P-kfKMEMPYWO17bostVrprUsE0zu6A8kFqgeJSNBqv73ooDJMyd0MnH4_ItmAudCu78l7S8ynHQ2UAPzByuozJ0g-7wUR78KB_wbLkORUWUr-JLoopH6QAc21PXVmCdryWk3P-Eex3VEA8F5tgdX79jA8Uies5Dyt_nI7eVS5hkkOtKKhxPRjZC0YJrIFtcgyo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Telur Balado",
+											"type": "text"
+										},
+										{
+											"key": "sellingprice",
+											"value": "20000",
+											"type": "text"
+										},
+										{
+											"key": "costprice",
+											"value": "15000",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "-",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/fredr/Downloads/Foto (1) (1).jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://backendtest.teammatech.com/api/v1/food/create",
+									"protocol": "https",
+									"host": [
+										"backendtest",
+										"teammatech",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"food",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://backendtest.teammatech.com/api/v1/food/read",
+									"protocol": "https",
+									"host": [
+										"backendtest",
+										"teammatech",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"food",
+										"read"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmE2ZThmNmQxNjcxYzU5MzNlODQ3ZDJjY2UxN2EwZDc5NTRiMjk4YTA1MzgwOTg1MGFiMjBhMTkzZGEyNzc5OWI5YjVjMGVjMGUyNjBiZjMiLCJpYXQiOjE2OTA3Mjg0ODUuNzg1ODc0LCJuYmYiOjE2OTA3Mjg0ODUuNzg1ODc5LCJleHAiOjE3MjIzNTA4ODUuNjg0MzQxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.vjuHwZcAExJegkRngOMK9ojzL-XCq5T0wylF62187wsxLWv3WQZI8mbVoe3G1kHlRD03ELMBz6k2WCZAt-wG5SktAp6XXz2_EMLE3rzkfrJSSpxnRHsbiKClmb8DxL8iONye8xo-k2TJQViDIdx_1Qx5syarHWD285lwWC0vOdY22SmVPYQ3HDdgaQK-Lb_g91XEyf_dGcTBIR9_i0XwbRnSRsH8TZpeZ3tbspO0SFrCgPUxiqJ49pdyzhGZvkNSkqC99y2wPF7icd_oVRkqk_loXHTadh0tH71Thm_KiHacnwu20qvfBnx-nFivIma0EaTTJVSRiJVJv5fIS_VchDb9kLL3Z4gvPmQ2kAj1P1WqXU9Uiqmi5op0Aq3KE3z_mUTMc3iXX_AUbNlICdkp0ya32E-Q1ywfUc3SlNYRBydzqym7s03j0WXeAW1-3v9oznWk5tZvKB2dRURep8-ury-gKPVRXwU-70GJIeFxe8npfuB8FrRkaUwVXSvfXZWI7KvNbmIFuGECaFT69F1xSzn9qFd4D9L8MH4BN17LbFOeKlbuZaEuQnWTclYjL8-gi1Um1tz-bK11uLC8wMv9WjPglMW1qj2spja6oxKZtyQl2ixagumVlxI1g-Utu-jnRsEp3rwtAUDy1GNtM4_4d83EW591UgmGCg3yBOjE0o8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Telur Balado",
+											"type": "text"
+										},
+										{
+											"key": "sellingprice",
+											"value": "20000",
+											"type": "text"
+										},
+										{
+											"key": "costprice",
+											"value": "15000",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "-",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/fredr/Pictures/Screenshots/Screenshot 2023-06-13 232942.png",
+											"disabled": true
+										},
+										{
+											"key": "food_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://backendtest.teammatech.com/api/v1/food/update",
+									"protocol": "https",
+									"host": [
+										"backendtest",
+										"teammatech",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"food",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjAyYTQzMTUzMTdhMWY3NTg0ODMwMTZjMDU4YzAxZDkxY2Y2M2RhYTc3MmZhZmQxMmU2YTU2NDExYjQzYjE5NWU0ODMwMDNkMjkyNjNkNDciLCJpYXQiOjE2OTA3MzgwMzEuODM2MjExLCJuYmYiOjE2OTA3MzgwMzEuODM2MjE0LCJleHAiOjE3MjIzNjA0MzEuODM0Mzk0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uT_kSReVNDo1SSj5hfYjAbUIugEVOyGK_J2FVA_4zSNE2EKXwzcqDu2Agd7OCkGp7osfN0SBhUr9OrMf56kf4WB5MhfF7f20QafbAQAhjFlb5e5dOXqksptILcXbfKhPBopjACWxNdPI-e2UfDfpurDDrE6fQ0mbMvdcHazfB8U6riv7NEIg-iS6twcw8egU_FjHiB_iod9yp8fgYok5oWkV84iUqaCj8Tz7ppJR-bJOxOhNaQ70PDzIO5f1mwieLVnhqyI4kjmR-5U7eYN9esrFKeukDAOMFObQl6CsS-rMexzJF2V_4ezHNKgD9Ofsrv-QJ1ezdFZTLpDmdtXXzA_41l8LIAvqtOCbZJF7awkm5ruuRzT9gkN8rDV-temM2ADhZ7d0GseM1GT3BJFHcnnttzzvtwe1sJ11Hc-leIEkSByyKAUgY8rQk5K6kz6OIBZ2T1S66ldvdDShYETn64060OS02fOa96Emtlhs5P-kfKMEMPYWO17bostVrprUsE0zu6A8kFqgeJSNBqv73ooDJMyd0MnH4_ItmAudCu78l7S8ynHQ2UAPzByuozJ0g-7wUR78KB_wbLkORUWUr-JLoopH6QAc21PXVmCdryWk3P-Eex3VEA8F5tgdX79jA8Uies5Dyt_nI7eVS5hkkOtKKhxPRjZC0YJrIFtcgyo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://backendtest.teammatech.com/api/v1/food/delete?food_id=1",
+									"protocol": "https",
+									"host": [
+										"backendtest",
+										"teammatech",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"food",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "food_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
